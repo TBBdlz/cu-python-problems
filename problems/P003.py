@@ -1,6 +1,5 @@
-import math
-
 if __name__ == '__main__':
+    import math
     a, b, c, d = [int(i) for i in input().split()]
     if a == 1:
         c, d = d, c  # swap value for c and d
