@@ -1,5 +1,5 @@
 """
-	P04-01 grader
+	P03-01 grader
 """
 score: float = float(input())
 

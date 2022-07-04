@@ -1,5 +1,5 @@
 """
-	P04-02 Median
+	P03-02 Median
 """
 
 a: int = int(input())
