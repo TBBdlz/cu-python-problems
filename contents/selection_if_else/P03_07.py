@@ -1,28 +1,27 @@
 """
-	P03-07: day number
+	P03-07: Gymnastics score
 """
+import logging
+s1, s2, s3, s4 = [float(i) for i in input().split()]
 
-d: int = int(input())
-m: int = int(input())
-y: int = int(input())
 
-days_in_month: list = [[1, 31], [2, 28], [3, 31], [4, 30],
-                                 [5, 31], [6, 30], [7, 31], [8, 31],
-                                 [9, 30], [0, 31], [1, 30], [2, 31]]
+logging.basicConfig(filename='P3_7_info.log', level=logging.INFO)
+# objectives get {s1', s2', s3', s4'} such that s1' < s2' < s3' < s4'
+# hardcode insertion sort for efficiency
+if s1 > s2:
+    s1, s2 = s2, s1
+elif s1 > s3:
+    s1, s3 = s3, s1
+elif s1 > s4:
+    s1, s4 = s4, s1
 
-# check if it is leapyear
-ac = y - 543 # BC
-if ac % 400 == 0:
-    days_in_month[1][1] = 29
-elif ac % 4 == 0 and ac % 100 != 0:
-    days_in_month[1][1] = 29
+if s2 > s3:
+    s2, s3 = s3, s2
+elif s2 > s4:
+    s2, s4 = s4, s2
 
-num_days: int = 0
-if m != 1:
-	for i in range(m-1):
-		num_days += days_in_month[i+1][1]
-	num_days += d
-else:
-	num_days = d
+if s3 > s4:
+    s3, s4 = s4, s3
 
-print(num_days)
+logging.info(f'{s1} {s2} {s3} {s4}')
+print((s2 + s3) / 2)
