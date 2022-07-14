@@ -1,5 +1,5 @@
 using Printf
-
+using InverseFunctions
 
 a = readline()
 a = parse(Float64, a)
@@ -14,10 +14,12 @@ function bisec(f::Function, a::Float64)
     U::Float64 = a
     ans_range = Array([L, U])
     x = mid(ans_range)
-    while abs(a - f(x)) > (10^-10 * max(a, f(x)))
-        if f(x) > a
+    inv_f::Function = inverse(f)
+    # x = f(a) -> f-1(x) = a -> a - f-1(x) near 0 
+    while abs(a - inv_f(x)) > (10^-10 * max(a, inv_f(x)))
+        if inv_f(x) > a
             ans_range[2] = x
-        elseif f(x) < a
+        elseif inv_f(x) < a
             ans_range[1] = x
         end
         x = mid(ans_range)
