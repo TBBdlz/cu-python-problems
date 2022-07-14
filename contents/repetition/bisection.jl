@@ -12,7 +12,7 @@ end
 function bisec(f::Function, a::Float64)
     L::Float64 = 0.0
     U::Float64 = a
-    ans_range = Array([L, U])
+    ans_range = Array{Float64}([L, U])
     x = mid(ans_range)
     inv_f::Function = inverse(f)
     # x = f(a) -> f-1(x) = a -> a - f-1(x) near 0 
