@@ -4,7 +4,7 @@
 
 
 def swap_bracket(sarg: str) -> None:
-    for char in expression:
+    for char in sarg:
         if char == '(':
             print('[', end='')
         elif char == ')':
