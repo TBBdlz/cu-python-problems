@@ -5,19 +5,19 @@
 print_star = lambda: print('*', end='')
 print_space = lambda: print(' ', end='')
 def draw_triangle(height: int) -> None:
-    for i in range(height):
-        for j in range(2*height-1):
-            if i == 0:
-                if j == height-1:
+    for y in range(height):
+        for x in range(2*height-1):  # (x, y) is coordinates in the plane
+            if y == 0:
+                if x == height-1:
                     print_star()
                 else:
                     print_space()
-            elif i < h-1:
-                if j in {height-i-1, height+i-1}:
+            elif y < h-1:
+                if x in {height-y-1, height+y-1}:
                     print_star()
                 else:
                     print_space()
-            elif i == height-1:
+            elif y == height-1:
                 print('*', end='')
         print()
 
