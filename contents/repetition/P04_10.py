@@ -17,7 +17,7 @@ for i in range(len(enc_data)):
 		else:
 			encoding_pair.extend(((temp, counter), (enc_data[i], 1)))
 		continue
-	
+
 	if enc_data[i] == temp:
 		counter += 1
 	else:
@@ -25,8 +25,7 @@ for i in range(len(enc_data)):
 		temp = enc_data[i]
 		counter = 1
 
-print(encoding_pair)
-# for pair in encoding_pair:
-# 	print(f'{pair[0]} {pair[1]}', end='')
-# 	print(' ', end='')
-# print()
+for pair in encoding_pair:
+	print(f'{pair[0]} {pair[1]}', end='')
+	print(' ', end='')
+print()
