@@ -1,0 +1,1 @@
+[print('Thx') for _ in range(1000)]
