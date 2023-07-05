@@ -6,7 +6,7 @@ from math import pow, sqrt, exp, pi
 n: int = int(input())
 
 
-def factorial_boundary(n: int) -> float:
+def factorial_boundary(n: int) -> tuple:
     lower_bound: float = sqrt(2 * pi) * pow(n, n + 0.5) * \
         exp(-n + 1 / (12 * n + 1))
     upper_bound: float = sqrt(
