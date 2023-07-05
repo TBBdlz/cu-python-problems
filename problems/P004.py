@@ -1,27 +1,32 @@
-x1: str = input().strip()
-x2: str = input().strip()
-x3: str = input().strip()
-x: str = x1 + x2 + x3
-if len(x) == 9:
-    win: str = '-'
-    i: int = 0
-    while i < 3:
-        if x[3 * i] == x[3 * i + 1] == x[3 * i + 2]:
-            win = x[3*i]
-            break
-        elif x[i] == x[i + 3] == x[i + 6]:
-            win = x[i]
-            break
+def main() -> None:
+    x1: str = input().strip()
+    x2: str = input().strip()
+    x3: str = input().strip()
+    x: str = x1 + x2 + x3
+    if len(x) == 9:
+        win: str = '-'
+        i: int = 0
+        while i < 3:
+            if x[3 * i] == x[3 * i + 1] == x[3 * i + 2]:
+                win = x[3*i]
+                break
+            elif x[i] == x[i + 3] == x[i + 6]:
+                win = x[i]
+                break
+            else:
+                i += 1
+        if win == '-':
+            if x[0] == x[4] == x[8]:
+                win = x[0]
+            if x[3] == x[4] == x[6]:
+                win = x[6]
+        if win == '-':
+            print('???')
         else:
-            i += 1
-    if win == '-':
-        if x[0] == x[4] == x[8]:
-            win = x[0]
-        if x[3] == x[4] == x[6]:
-            win = x[6]
-    if win == '-':
-        print('???')
+            print(win)
     else:
-        print(win)
-else:
-    print('ERROR')
+        print('ERROR')
+
+
+if __name__ == '__main__':
+    main()

@@ -1,5 +1,7 @@
-if __name__ == '__main__':
-    import math
+import math
+
+
+def main() -> None:
     a, b, c, d = [int(i) for i in input().split()]
     if a == 1:
         c, d = d, c  # swap value for c and d
@@ -28,3 +30,7 @@ if __name__ == '__main__':
                 break
             c += a
     print(a, b, c, d)
+
+
+if __name__ == '__main__':
+    main()
