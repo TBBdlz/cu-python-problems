@@ -1,4 +1,4 @@
-from typing import List, Tuple, Union
+from typing import List, Tuple
 
 
 def is_valid_input(input_str: str) -> bool:
